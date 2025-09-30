@@ -12,7 +12,7 @@ app = FastAPI(title="Ask API with Gemini", version="1.0")
 # Gemini API Config (hardcoded key ⚠️)
 # ----------------------
 # 👉 Replace with your actual Gemini API key
-GEMINI_API_KEY = "YOUR_GEMINI_API_KEY_HERE"
+GEMINI_API_KEY = "AIzaSyAYzx76osJSXZd61P15YHFbByolJ0j0Xo8"
 MODEL_NAME = "gemini-2.5-flash"   # or "gemini-2.5-pro"
 GEMINI_API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL_NAME}:generateContent"
 
