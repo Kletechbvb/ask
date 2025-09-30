@@ -29,8 +29,8 @@ def ask(question: str, context: str):
     Returns structured JSON.
     """
 
-    # System role
-    system_prompt = """
+    # Prompt instructions (instead of system role)
+    instruction = """
     You are a helpful study assistant 🤝.
     Format your answers like this:
     • Use numbered sections (1., 2., 3.)
@@ -43,8 +43,10 @@ def ask(question: str, context: str):
     "❌ Sorry, I couldn’t find anything related in your uploads."
     """
 
-    # User prompt
+    # User full prompt
     user_prompt = f"""
+    {instruction}
+
     CONTEXT:
     {context}
 
@@ -54,8 +56,10 @@ def ask(question: str, context: str):
 
     payload = {
         "contents": [
-            {"role": "system", "parts": [{"text": system_prompt}]},
-            {"role": "user", "parts": [{"text": user_prompt}]}
+            {
+                "role": "user",
+                "parts": [{"text": user_prompt}]
+            }
         ]
     }
 
